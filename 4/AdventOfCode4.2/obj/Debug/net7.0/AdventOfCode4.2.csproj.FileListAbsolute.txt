@@ -1,0 +1,15 @@
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\bin\Debug\net7.0\AdventOfCode4.2.exe
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\bin\Debug\net7.0\AdventOfCode4.2.deps.json
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\bin\Debug\net7.0\AdventOfCode4.2.runtimeconfig.json
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\bin\Debug\net7.0\AdventOfCode4.2.dll
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\bin\Debug\net7.0\AdventOfCode4.2.pdb
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\AdventOfCode4.2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\AdventOfCode4.2.AssemblyInfoInputs.cache
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\AdventOfCode4.2.AssemblyInfo.cs
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\AdventOfCode4.2.csproj.CoreCompileInputs.cache
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\AdventOfCode4.2.dll
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\refint\AdventOfCode4.2.dll
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\AdventOfCode4.2.pdb
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\AdventOfCode4.2.genruntimeconfig.cache
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\obj\Debug\net7.0\ref\AdventOfCode4.2.dll
+C:\Users\14hod\Desktop\Coding\c#\Advent\4\AdventOfCode4.2\bin\Debug\net7.0\input.txt

@@ -6,7 +6,7 @@ class Program
     {
         var input = File.ReadLines("input.txt");
         long runningTotal = 0;
-
+        // formula for the possiblilities is| # of Operands to the power of # of spaces
         foreach (var line in input)
         {
             long expectedTotal = Convert.ToInt64(line.Split(":").First());
@@ -15,7 +15,7 @@ class Program
             // 292: 11 6 16 20
             int spaceCount = numberList.Length - 1;
 
-            int possibilities = Convert.ToInt32(Math.Pow(3,spaceCount));
+            int possibilities = Convert.ToInt32(Math.Pow(2,spaceCount));
 
             while (possibilities > 0)
             {

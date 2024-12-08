@@ -19,30 +19,72 @@ class Program
         // 3. If we're not violating any rules on that row, add it to goodInputLIst
 
         
-        // Test String
-        // 75,47,61,53,29
-        
 
-        // 97|13
-        // 97|61
-        // 97|47
+        // 75,97,47,61,53 becomes 97,75,47,61,53.
+        // 61,13,29 becomes 61,29,13.
         
-        for (int i = 0; i < input.Length; i++) // For every line of input check if it's following the rules
+        // 97,13,75,29,47 becomes 97,75,47,29,13
+        
+        
+        for (var i = 0; i < input.Length; i++) // For every line of input check if it's following the rules
         {
-            if (DoesListBreakRule(ruleSet, input[i].Split(",")))
+            if (!DoesListBreakRule(ruleSet, input[i].Split(",")))
             {
-                goodInputList.Add(input[i].Split(","));
+                var pageList = input[i].Split(",");
+                // Bad Input[i] sort it.
+                //Console.WriteLine(pageList[0]);
+                for (var j = 0; j < pageList.Length; j++)
+                {
+                    
+
+                    var tempNum = "0"; 
+
+                    foreach(var r in ruleSet)
+                    {
+                         var beforeNum = r.Split("|")[0];
+                         var afterNum = r.Split("|")[1];
+                         if (pageList[j] != afterNum) { continue; }
+                         
+                         for (var k = 0; k < pageList.Length; k++)
+                         {
+                             if ((pageList[k] == beforeNum) && (k > j))
+                             {
+
+                                 // Flip the indexes of the numbers
+                                 tempNum = pageList[k];
+                                 pageList[k] = pageList[j];
+                                 pageList[j] = tempNum;
+                                 
+
+                                 if (DoesListBreakRule(ruleSet, pageList))
+                                 {
+                                    goodInputList.Add(pageList);
+                                 }
+                                 else
+                                 {
+                                     k = 0;
+                                     j = 0;
+                                 }
+                             }
+                         }
+                         
+                    }
+                    
+                }
+            }
+            else
+            {
+                //goodInputList.Add(input[i].Split(","));
             }
         }
 
         foreach (var goodInput in goodInputList)
         {
-            total = total + Convert.ToInt32(goodInput[goodInput.Length / 2]);
+            total += Convert.ToInt32(goodInput[goodInput.Length / 2]); ;
         }
+        
         Console.WriteLine(total);
     }
-
-    
     
     public static bool DoesListBreakRule(string[] ruleSet, string[] pageList)
     {
@@ -51,8 +93,6 @@ class Program
         // Logic for checking the pagelist against the rules now. 
         foreach (var rule in ruleSet)
         {
-            // 47|53
-            //75,47,61,53,29
             var ruleNumbers = rule.Split("|");
             beforeNum = Convert.ToInt32(ruleNumbers[0]);
             afterNum = Convert.ToInt32(ruleNumbers[1]);
@@ -64,12 +104,12 @@ class Program
                     {
                         if (pageList[j] == beforeNum.ToString() && j > i)
                         {
-                            return false;
+                            return false; // Doesn't break rule 
                         }    
                     }
                 } 
             }
         }
-        return true;
+        return true; // Does break rule
     }
 }

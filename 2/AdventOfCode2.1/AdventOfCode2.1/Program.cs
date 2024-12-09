@@ -9,9 +9,11 @@ class Program
         
         foreach (var line in input)
         {
-            bool increasing = false;
-            bool safe = true;
+            var increasing = false;
+            var safe = true;
+            var badLevelCount = 0;
             var report = line.Split(" ");
+            
             for (var i = 0; i < report.Length - 1; i++)
             {
                 if (i == report.Length - 1) { break; }
@@ -26,19 +28,19 @@ class Program
                     increasing = true;
                 }
                 
-                if (increasing && currentNum >= nextNum) { safe = false; break; }
-                if (!increasing && currentNum <= nextNum) { safe = false; break; }
+                if (increasing && currentNum >= nextNum) { badLevelCount++;}
+                if (!increasing && currentNum <= nextNum) { badLevelCount++; }
                 
                 // We've covered the increase / decrease pattern.
-                if (!(Math.Abs(currentNum - nextNum) <= 3)) { safe = false; break; }
+                if (!(Math.Abs(currentNum - nextNum) <= 3)) { badLevelCount++; }
                 
-                if (currentNum == nextNum) { safe = false; break; }
-
+                if (currentNum == nextNum) { badLevelCount++; }
+    
             }
-
-            if (safe)
+            Console.WriteLine($"{line} : {badLevelCount}");
+            if (badLevelCount <= 1)
             {
-                //Console.WriteLine(line);
+                
                 total++;
             }
         }
